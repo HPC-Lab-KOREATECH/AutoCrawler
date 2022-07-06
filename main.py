@@ -382,7 +382,7 @@ if __name__ == '__main__':
         _no_gui = False
 
     print(
-        'Options - skip:{}, threads:{}, google:{}, naver:{}, full_resolution:{}, face:{}, no_gui:{}, limit:{}, _proxy_list:{}'
+        'Options - skip:{}, threads:{}, google:{}, naver:{}, full_resolution:{}, face:{}, no_gui:{}, limit:{}, proxy_list:{}'
             .format(_skip, _threads, _google, _naver, _full, _face, _no_gui, _limit, _proxy_list))
 
     crawler = AutoCrawler(skip_already_exist=_skip, n_threads=_threads,
