@@ -74,6 +74,20 @@ screen -S s1
 Xvfb :99 -ac & DISPLAY=:99 python3 main.py
 ```
 
+# add_params
+
+ `add_params_google.txt`, `add_params_naver.txt`에 검색시 추가할 GET 매개변수 등록
+ 
+구글 이미지 고급 검색 - http://images.google.com/advanced_image_search?hl=ko
+
+네이버 이미지 검색 - https://search.naver.com/search.naver?where=image&sm=tab_jum&query=
+
+## 주요 매개변수
+
+네이버 `&res_fr=786432&res_to=100000000`
+
+구글 `&tbs=isz:lt,islt:70mp`
+
 # Customize
 
 You can make your own crawler by changing collect_links.py
