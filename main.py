@@ -49,7 +49,12 @@ class Sites:
             return "&tbs=itp:face"
         if code == Sites.NAVER or Sites.NAVER_FULL:
             return "&face=1"
-
+        
+    @staticmethod
+    def get_add_params(code):
+        with open('add_params_' + Sites.get_text(code) + '.txt', 'r', encoding='utf-8-sig') as f:
+            text = f.read()
+        return text
 
 class AutoCrawler:
     def __init__(self, skip_already_exist=True, n_threads=4, do_google=True, do_naver=True, download_path='download',
@@ -217,6 +222,7 @@ class AutoCrawler:
     def download_from_site(self, keyword, site_code):
         site_name = Sites.get_text(site_code)
         add_url = Sites.get_face_url(site_code) if self.face else ""
+        add_url += Sites.get_add_params(site_code)
 
         try:
             proxy = None
